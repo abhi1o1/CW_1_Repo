@@ -1,4 +1,5 @@
 import sys
+
 def decimal_to_hex(decimal_value):
     hex_chars = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
     hexadecimal = ""
@@ -15,13 +16,11 @@ def decimal_to_hex(decimal_value):
     return hexadecimal  # Return the hexadecimal value for testing
 
 if __name__ == "__main__":
-    if len(sys.argv) > 1:
+    if len(sys.argv) <= 1:
+        print("Error: No input provided. Please provide a decimal integer.")
+    else:
         try:
             decimal_value = int(sys.argv[1])
             decimal_to_hex(decimal_value)
         except ValueError:
-            print("Please provide a valid integer.")
-    else:
-        print("Usage: python script.py <decimal_number>")
-
-
+            print("Error: Invalid input. Please provide a valid integer.")
